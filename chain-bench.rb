@@ -5,20 +5,20 @@
 class ChainBench < Formula
   desc "Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
   homepage "https://github.com/aquasecurity/chain-bench"
-  version "0.1.5-beta"
+  version "0.1.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5-beta/chain-bench_0.1.5-beta_macOS_ARM64.tar.gz"
-      sha256 "97cafbe1fe516f6cabd1d8d97855056c7331a03895fc41980ca28eec2a8efcaf"
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5/chain-bench_0.1.5_macOS_ARM64.tar.gz"
+      sha256 "85ce8fcacebe69a3b3233e28a9c942cbff393d9ba7fa141ac8879cabdbcc8bfc"
 
       def install
         bin.install "chain-bench"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5-beta/chain-bench_0.1.5-beta_macOS_64bit.tar.gz"
-      sha256 "8130c031a72e4b277665d210983f6db7a6fc1ef909adfd2997ea5964f9ed672d"
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5/chain-bench_0.1.5_macOS_64bit.tar.gz"
+      sha256 "44e23a03bdde08fb873b722f1771be1ae85eba04e54c8ec7f93d01d2440ef93d"
 
       def install
         bin.install "chain-bench"
@@ -27,17 +27,17 @@ class ChainBench < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5-beta/chain-bench_0.1.5-beta_Linux_64bit.tar.gz"
-      sha256 "26602676617e94c395146569d6683da2598a95505926b5b0d6e935edd3dc2f68"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5/chain-bench_0.1.5_Linux_ARM64.tar.gz"
+      sha256 "218f418a5221d834069d851c81c64ee782453aece32ff535091b4db7ea157039"
 
       def install
         bin.install "chain-bench"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5-beta/chain-bench_0.1.5-beta_Linux_ARM64.tar.gz"
-      sha256 "571d06cf79fc3f0a658f000ac15cda95fe2843c7906540b938605268afd3e729"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.5/chain-bench_0.1.5_Linux_64bit.tar.gz"
+      sha256 "7cd2504d84d03b25463a63297d130d5072ae6d1fa49d403190d42d0f3bc30142"
 
       def install
         bin.install "chain-bench"
