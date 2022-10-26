@@ -10,7 +10,7 @@ class ChainBench < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_macOS_ARM64.tar.gz"
-      sha256 "faa3659f5d529735a6c98afbc1943b40ad19ca89f60c95c68016bb2d01df981c"
+      sha256 "6b236f5f10b4c910fc7b81b1cd8c8002e30660657a4e568e078c61945580fc89"
 
       def install
         bin.install "chain-bench"
@@ -18,7 +18,7 @@ class ChainBench < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_macOS_64bit.tar.gz"
-      sha256 "3ca72e27e94de6c0b8bbcb409d97e37162ad857b1e515c0ad1bd59fd48a738ba"
+      sha256 "602baebdca61015a37103a93f95e4384b6e1d67f6fb65fdaafa3442ef64f1e07"
 
       def install
         bin.install "chain-bench"
@@ -27,17 +27,17 @@ class ChainBench < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_Linux_ARM64.tar.gz"
-      sha256 "b7ef496b45d627aac07f1601438a534561abf5a5891174cb01ff3acbcb0d0e78"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_Linux_64bit.tar.gz"
+      sha256 "effcfa162723cb5f828fad98c04ee5de2e08597410e809cec9b505f8266a1f2e"
 
       def install
         bin.install "chain-bench"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_Linux_64bit.tar.gz"
-      sha256 "89e9fde7bb02284a28036e8e48d49e41c4aaa678a1a613d433c4065a93b5343d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aquasecurity/chain-bench/releases/download/v0.1.6/chain-bench_0.1.6_Linux_ARM64.tar.gz"
+      sha256 "2ff843080b4fe29070fdbb3a5659c42afda603ddc07b74295ca2f08805e40ebd"
 
       def install
         bin.install "chain-bench"
